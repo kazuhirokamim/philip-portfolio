@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Philip Kamimura | Systems Analysis &amp; Development</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#eaddff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "primary-container": "#1b1b1b",
+                        "on-secondary-fixed": "#25005a",
+                        "inverse-surface": "#2e3132",
+                        "primary-fixed": "#e2e2e2",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "on-primary-fixed": "#1b1b1b",
+                        "background": "#f8f9fa",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-fixed-variant": "#474747",
+                        "secondary-fixed-dim": "#d2bbff",
+                        "outline": "#7e7576",
+                        "on-surface-variant": "#4c4546",
+                        "on-secondary-container": "#fffbff",
+                        "error": "#ba1a1a",
+                        "tertiary-container": "#1b1b1b",
+                        "surface-dim": "#d9dadb",
+                        "on-background": "#191c1d",
+                        "inverse-primary": "#c6c6c6",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#5e5e5e",
+                        "on-secondary-fixed-variant": "#5a00c6",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#edeeef",
+                        "on-surface": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "secondary": "#712ae2",
+                        "outline-variant": "#cfc4c5",
+                        "primary": "#000000",
+                        "on-primary-container": "#848484",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "tertiary": "#000000",
+                        "primary-fixed-dim": "#c6c6c6",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-container": "#848484",
+                        "surface": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#8a4cfc"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "container-max": "1200px",
+                        "element-gap": "24px",
+                        "unit": "8px",
+                        "section-padding": "120px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "h1": ["Inter"],
+                        "display": ["Inter"],
+                        "h2": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "h3": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                        "display": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "600"}],
+                        "h2": ["30px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-900 shadow-[0_30px_50px_rgba(0,0,0,0.03)] dark:shadow-none">
+<div class="max-w-7xl mx-auto flex justify-between items-center px-10 py-6">
+<span class="text-xl font-bold tracking-tighter text-zinc-900 dark:text-zinc-50">Philip Kamimura</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-purple-600 dark:text-purple-400 font-medium border-b border-purple-600 font-['Inter'] antialiased tracking-tight" href="#about">About</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] antialiased tracking-tight" href="#experience">Experience</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] antialiased tracking-tight" href="#skills">Skills</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] antialiased tracking-tight" href="#projects">Projects</a>
+<a class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors duration-300 font-['Inter'] antialiased tracking-tight" href="#contact">Contact</a>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-lg font-medium hover:scale-[1.02] active:scale-95 transition-all duration-200">Resume</button>
+</div>
+</nav>
+<main class="pt-[100px]">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-10 py-[120px] grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-fixed rounded-full">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<span class="text-label-sm font-label-sm text-on-secondary-fixed-variant">Campo Grande – MS, Brazil</span>
+</div>
+<h1 class="text-display font-display text-on-surface">Philip Kazuhiro <br/><span class="text-secondary">Kamimura</span></h1>
+<p class="text-h3 font-h3 text-on-surface-variant max-w-xl">Systems Analysis and Development Student | Process and Systems Analysis</p>
+<p class="text-body-lg font-body-lg text-outline">"Bridging business needs with technology through process analysis and system development"</p>
+<div class="flex gap-4 pt-4">
+<a class="bg-primary text-on-primary px-8 py-4 rounded-lg font-medium hover:shadow-xl hover:-translate-y-1 transition-all" href="#projects">View Projects</a>
+<a class="border border-outline text-on-surface px-8 py-4 rounded-lg font-medium hover:bg-surface-container-low transition-all" href="#contact">Contact</a>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square rounded-full overflow-hidden shadow-2xl bg-surface-container-highest">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+     src="profile.jpg"
+     alt="Philip Kazuhiro Kamimura"/>
+</div>
+<div class="absolute -bottom-8 -right-8 bg-white p-8 rounded-xl shadow-2xl hidden md:block">
+<p class="text-display font-display text-secondary">8.73</p>
+<p class="text-label-sm font-label-sm text-outline">CURRENT GPA</p>
+</div>
+</div>
+</section>
+<!-- About Section -->
+<section class="bg-white py-[120px]" id="about">
+<div class="max-w-7xl mx-auto px-10">
+<div class="max-w-4xl">
+<h2 class="text-h1 font-h1 mb-12">About Me</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                        Analytical professional with strong involvement in process organization, operational analysis and support for internal technology solutions. Experience in monitoring workflows, organizing business rules and identifying automation opportunities, connecting business needs with technical implementation to improve efficiency and decision-making.
+                    </p>
+<div class="mt-12 flex gap-12">
+<div>
+<p class="text-label-sm font-label-sm text-secondary mb-1">EDUCATION</p>
+<p class="text-body-md font-body-md font-medium">S.A.D @ UCDB</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-secondary mb-1">LANGUAGE</p>
+<p class="text-body-md font-body-md font-medium">English — Advanced</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-secondary mb-1">INTERNSHIP</p>
+<p class="text-body-md font-body-md font-medium">DPT (Vuou)</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience Timeline -->
+<section class="py-[120px]" id="experience">
+<div class="max-w-7xl mx-auto px-10">
+<h2 class="text-h1 font-h1 mb-20 text-center">Professional Journey</h2>
+<div class="space-y-12 relative before:absolute before:left-0 md:before:left-1/2 before:w-[1px] before:h-full before:bg-outline-variant">
+<!-- Item 1 -->
+<div class="relative md:flex md:justify-between items-center w-full">
+<div class="md:w-[45%] mb-8 md:mb-0">
+<div class="bg-white p-8 rounded-xl shadow-sm border border-zinc-100 hover:shadow-lg transition-all">
+<span class="text-label-sm font-label-sm text-secondary">NOV 2025 – MAR 2026</span>
+<h3 class="text-h3 font-h3 mt-2">DPT Company (Vuou)</h3>
+<p class="text-body-md font-body-md font-medium text-outline mb-4">Operations and Technology Intern</p>
+<ul class="space-y-2 text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Monitoring operational processes &amp; Full stack development (JS, Node.js)</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Automation identification and dashboard management</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Financial tracking and functional documentation</li>
+</ul>
+</div>
+</div>
+<div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-secondary border-4 border-white shadow-md"></div>
+<div class="md:w-[45%]"></div>
+</div>
+<!-- Item 2 -->
+<div class="relative md:flex md:justify-between items-center w-full">
+<div class="md:w-[45%]"></div>
+<div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-outline border-4 border-white"></div>
+<div class="md:w-[45%]">
+<div class="bg-white p-8 rounded-xl shadow-sm border border-zinc-100 hover:shadow-lg transition-all">
+<span class="text-label-sm font-label-sm text-outline">AUG 2025 – OCT 2025</span>
+<h3 class="text-h3 font-h3 mt-2">Assistence Informática</h3>
+<p class="text-body-md font-body-md font-medium text-outline mb-4">IT Support Intern</p>
+<p class="text-on-surface-variant">Technical support, ticket handling, and infrastructure maintenance across client systems.</p>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative md:flex md:justify-between items-center w-full">
+<div class="md:w-[45%]">
+<div class="bg-white p-8 rounded-xl shadow-sm border border-zinc-100 hover:shadow-lg transition-all">
+<span class="text-label-sm font-label-sm text-outline">MAR 2022 – FEB 2023</span>
+<h3 class="text-h3 font-h3 mt-2">Brazilian Army</h3>
+<p class="text-body-md font-body-md font-medium text-outline mb-4">Administrative Support</p>
+<p class="text-on-surface-variant">Document organization and internal routine control within a highly disciplined administrative framework.</p>
+</div>
+</div>
+<div class="hidden md:block absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-outline border-4 border-white"></div>
+<div class="md:w-[45%]"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="bg-primary-container py-[120px] text-white" id="skills">
+<div class="max-w-7xl mx-auto px-10">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">analytics</span>
+<h3 class="text-h3 font-h3">Process &amp; Analysis</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">Process Organization</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">Data Analysis</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">Automation</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">Documentation</span>
+</div>
+</div>
+<div class="space-y-6">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">code</span>
+<h3 class="text-h3 font-h3">Development</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">JavaScript</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">Node.js</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">SQL</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">Java (OOP)</span>
+</div>
+</div>
+<div class="space-y-6">
+<span class="material-symbols-outlined text-secondary-fixed text-4xl">handyman</span>
+<h3 class="text-h3 font-h3">Tools</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">Excel</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">ClickUp</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">AnyDesk</span>
+<span class="px-3 py-1 bg-white/10 rounded-full text-label-sm font-label-sm">TeamViewer</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="py-[120px]" id="projects">
+<div class="max-w-7xl mx-auto px-10">
+<div class="flex justify-between items-end mb-16">
+<div>
+<h2 class="text-h1 font-h1">Featured Projects</h2>
+<p class="text-body-lg font-body-lg text-outline mt-2">Selected technical and analytical work</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_30px_50px_rgba(0,0,0,0.03)] border border-transparent hover:border-zinc-100 transition-all">
+<div class="h-48 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean dashboard interface with data visualizations and sleek graphs on a computer monitor in a bright studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3CxBV4NwQ1IXbPUArgLcbHcSXv-006Gnkfivs0qn2nDfZ3DaEvDygaWYFpJ49nqDuBMkMCQPCYt5DnMkhO_vRPY6PgqvTkoTDBoOl6q5h8yPFHcgGtEPh0UQxYc7UtqF6ly95aIOrhyaDhlz1MVKNBeaUX7D3Mqk0oJ3bMRN-EspR1vwJbtJiCd9Qsl5GvbCREd4HRsu_lpy4Ab0YBD3rIprsTcB90mDsZ_7BvA-Cyo1Q-U3jV_HZbi90FvmPWNNU_ANjO0Nb6faB"/>
+</div>
+<div class="p-8">
+<span class="text-label-sm font-label-sm text-secondary">FULL STACK</span>
+<h3 class="text-h3 font-h3 mt-2 mb-4">Internal Customer Management System</h3>
+<div class="flex gap-2 mb-6">
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">Node.js</span>
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">React</span>
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">SQL</span>
+</div>
+<button class="w-full py-3 border border-outline text-on-surface rounded font-medium group-hover:bg-primary group-hover:text-on-primary transition-colors">View Details</button>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_30px_50px_rgba(0,0,0,0.03)] border border-transparent hover:border-zinc-100 transition-all">
+<div class="h-48 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Flowchart diagram on a white board being analyzed by a professional team in a minimalist meeting room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlSYXyjudPq6ruVWDJGV_CPSZBiTKGpu4ENLad1aWELFthL14FPZ05rDMTnp-Qta_8pHUp0qbM5YLUOUsX85GWAM3NpsMrpZ3jzIJCHxYnY7Uxt8W5DwT6n5P-GGlmg7Dq6OnfYBkdzwC1Te2LGDQW7hzHmm0VXXng80fObKscEF4Cx0WhepyuDifS_keW_HQcKmHihAAMBNhJ32_C4MxJ9TYsqnFGOdcdGAQVesqMQBMo5ry_uu5naDHUSv56_56YGqHkVuZJZ27a"/>
+</div>
+<div class="p-8">
+<span class="text-label-sm font-label-sm text-secondary">ANALYSIS</span>
+<h3 class="text-h3 font-h3 mt-2 mb-4">Process Optimization &amp; Automation</h3>
+<div class="flex gap-2 mb-6">
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">BPMN</span>
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">ClickUp</span>
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">Automation</span>
+</div>
+<button class="w-full py-3 border border-outline text-on-surface rounded font-medium group-hover:bg-primary group-hover:text-on-primary transition-colors">View Details</button>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group bg-white rounded-xl overflow-hidden shadow-[0_30px_50px_rgba(0,0,0,0.03)] border border-transparent hover:border-zinc-100 transition-all">
+<div class="h-48 bg-surface-container-high overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract view of an airplane wing against a clear blue sky, symbolizing flight pricing and systems" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCU5U8V8PMeCVJzwUemGSph9x3NJ0TTq7DMiDKNPgUlWukFpllMAm7aJrc7fXsn0lY60iNXJtrU7x4zwt3Na1fqHpwon_AAwuZuwL0TRFqouYONCLREaNR5Jbz587vknK9WAjw5u9taZ-lgGvAnhHr2vNXkhFV8KmPDZ2HLZfsAPNyfPNewiwHMpkIdp6Dg3fZshtDzPm5gQNWBwMtkqQstDe39I9ELF-W15yx6v1kI5UdZBLmW9EqcpKU4x-zgQ9bzNxxCV5QLEJsp"/>
+</div>
+<div class="p-8">
+<span class="text-label-sm font-label-sm text-secondary">DEVELOPMENT</span>
+<h3 class="text-h3 font-h3 mt-2 mb-4">Flight Pricing and Quotation System</h3>
+<div class="flex gap-2 mb-6">
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">JS</span>
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">API</span>
+<span class="text-label-sm font-label-sm text-outline px-2 py-1 bg-surface rounded">Node</span>
+</div>
+<button class="w-full py-3 border border-outline text-on-surface rounded font-medium group-hover:bg-primary group-hover:text-on-primary transition-colors">View Details</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Education & Additional -->
+<section class="bg-surface-container-low py-[120px]">
+<div class="max-w-7xl mx-auto px-10 grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div>
+<h2 class="text-h1 font-h1 mb-10">Education</h2>
+<div class="bg-white p-8 rounded-xl shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-h3 font-h3">Systems Analysis &amp; Development</h3>
+<p class="text-body-md font-body-md text-outline">UCDB - Universidade Católica Dom Bosco</p>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant px-4 py-1 rounded text-label-sm font-label-sm">5th Semester</span>
+</div>
+<div class="grid grid-cols-2 gap-8 mt-8">
+<div>
+<p class="text-label-sm font-label-sm text-outline">GRADUATION</p>
+<p class="text-h3 font-h3">Feb 2026</p>
+</div>
+<div>
+<p class="text-label-sm font-label-sm text-outline">GPA</p>
+<p class="text-h3 font-h3">8.73 / 10</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-h1 font-h1 mb-10">Distinctions</h2>
+<div class="space-y-6">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">public</span>
+</div>
+<div>
+<h4 class="text-body-lg font-body-lg font-bold">Academic Exchange</h4>
+<p class="text-on-surface-variant">Soka University, Japan (2019). Broadened international perspective and cultural adaptability.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 bg-white rounded-lg shadow-sm flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">verified_user</span>
+</div>
+<div>
+<h4 class="text-body-lg font-body-lg font-bold">Federal Internship Program</h4>
+<p class="text-on-surface-variant">Approved for AGU (Advocacia-Geral da União) internship program in 2024.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-[120px]" id="contact">
+<div class="max-w-7xl mx-auto px-10 text-center">
+<h2 class="text-display font-display mb-6">Let's Connect</h2>
+<p class="text-h3 font-h3 text-outline mb-16 max-w-2xl mx-auto">I'm currently looking for new opportunities in systems analysis and development.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+<a class="p-8 bg-white rounded-xl shadow-sm border border-zinc-100 hover:scale-105 transition-all" href="mailto:kazuhirokamim@gmail.com">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">mail</span>
+<p class="text-label-sm font-label-sm text-outline">EMAIL</p>
+<p class="font-medium">kazuhirokamim@gmail.com</p>
+</a>
+<a class="p-8 bg-white rounded-xl shadow-sm border border-zinc-100 hover:scale-105 transition-all" href="https://linkedin.com/in/philip-kazuhiro-kamimura" target="_blank">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">link</span>
+<p class="text-label-sm font-label-sm text-outline">LINKEDIN</p>
+<p class="font-medium">philip-kazuhiro-kamimura</p>
+</a>
+<div class="p-8 bg-white rounded-xl shadow-sm border border-zinc-100 hover:scale-105 transition-all">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4">call</span>
+<p class="text-label-sm font-label-sm text-outline">PHONE</p>
+<p class="font-medium">+55 67 98186-1222</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-[120px] bg-white dark:bg-zinc-950 border-t border-zinc-100 dark:border-zinc-900">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center px-10 py-12 gap-8">
+<span class="font-bold text-zinc-900 dark:text-zinc-50 font-['Inter'] text-sm tracking-wide">Philip Kamimura</span>
+<p class="text-zinc-400 dark:text-zinc-600 font-['Inter'] text-sm tracking-wide">© 2024 Philip Kazuhiro Kamimura. Built with precision.</p>
+<div class="flex gap-6">
+<a class="text-zinc-400 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 hover:underline transition-all opacity-80 hover:opacity-100 font-['Inter'] text-sm tracking-wide" href="#">LinkedIn</a>
+<a class="text-zinc-400 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 hover:underline transition-all opacity-80 hover:opacity-100 font-['Inter'] text-sm tracking-wide" href="#">GitHub</a>
+<a class="text-zinc-400 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 hover:underline transition-all opacity-80 hover:opacity-100 font-['Inter'] text-sm tracking-wide" href="#">Twitter</a>
+<a class="text-zinc-400 dark:text-zinc-600 hover:text-zinc-900 dark:hover:text-zinc-100 hover:underline transition-all opacity-80 hover:opacity-100 font-['Inter'] text-sm tracking-wide" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>
